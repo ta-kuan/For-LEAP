@@ -12,10 +12,10 @@
         top: 50px;
       }
       .container {
-        display:none;
+        display: none;
       }
       .ment {
-        display: block;
+        display: none;
         background-color: rgb(230,230,230);
         border: none;
         width: 100vw;
@@ -27,6 +27,9 @@
         padding: 50vh 0;
         font-weight: bold;
         font-style: italic;
+      }
+      .ment.on {
+        display: block;
       }
       .question {
         font-size: 24px;
@@ -964,7 +967,7 @@
         <img id="img12" class="slide" src="ac12.png" alt="">
         <img id="img13" class="slide" src="ac13.png" alt="">
       </div>
-      <div class="ment">メンテナンス中</div>
+      <div class="ment" id="ment">メンテナンス中</div>
     <script>
       let current;
       let currentIndex;
@@ -2028,6 +2031,7 @@
       document.getElementById("numbers").value = 1;
       let rangeStart = parseInt(rangeStartSelect.value, 10);
       let rangeEnd = parseInt(rangeEndSelect.value, 10);
+      let M = 0;
 
 
       function checkcommand() {
@@ -2112,6 +2116,7 @@
           count,
           rensuc,
           usedQuestions: Array.from(usedQuestions),
+          M,
           qState: {
             a11: qaka.classList.contains("true"),
             a12: qaka.classList.contains("true"),
@@ -2143,7 +2148,7 @@
             mintyou: qmintyou.classList.contains("true"),
             zenmaru: qzenmaru.classList.contains("true"),
             sentaku: qsentaku.classList.contains("true"),
-            com: qcom.classList.contains("true")
+            com: qcom.classList.contains("true"),
           }
         };
         localStorage.setItem("quizState", JSON.stringify(state));
@@ -2309,6 +2314,14 @@
         document.getElementById("next").style.display = "none";
         document.getElementById("submit").disabled = false;
       }
+      function Ment() {
+        if (M === 1) {
+          ment.classList.remove("on")
+          M = 0;
+        } else if (M === 0) {
+          ment.classList.add("on")
+          M = 1;
+        }
 
 
 
@@ -2528,6 +2541,7 @@
           rangeStartSelect.value = rangeStart;
           rangeEndSelect.value = rangeEnd;
           document.getElementById("round").textContent = `${round}周目`;
+          M = saved.M || 0;
           if (saved.qState) {
             if (saved.qState.a11) q11.classList.add("true");
             if (saved.qState.a12) q12.classList.add("true");
