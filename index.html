@@ -2128,7 +2128,6 @@
           count,
           rensuc,
           usedQuestions: Array.from(usedQuestions),
-          M,
           qState: {
             a11: qaka.classList.contains("true"),
             a12: qaka.classList.contains("true"),
@@ -2332,7 +2331,7 @@
         } else if (M === 0) {
           M = 1;
         }
-        savedata();
+        localStorage.setItem("M", M);
         if (M === 0) {
           ment.classList.remove("on");
         } else if (M === 1) {
@@ -2341,6 +2340,13 @@
       }
 
 
+
+      M = localStorage.getItem("M");
+      if (M === 0) {
+        ment.classList.remove("on");
+      } else if (M === 1) {
+        ment.classList.add("on");
+      }
       rangeStartSelect.addEventListener("change", () => {
         const newStart = parseInt(rangeStartSelect.value, 10);
         const validatedStart = isNaN(newStart) ? 1 : newStart;
@@ -2558,7 +2564,6 @@
           rangeStartSelect.value = rangeStart;
           rangeEndSelect.value = rangeEnd;
           document.getElementById("round").textContent = `${round}周目`;
-          M = saved.M || 0;
           if (saved.qState) {
             if (saved.qState.a11) q11.classList.add("true");
             if (saved.qState.a12) q12.classList.add("true");
@@ -2596,11 +2601,6 @@
         }
         setQuestion();
       });
-      if (M === 0) {
-        ment.classList.remove("on");
-      } else if (M === 1) {
-        ment.classList.add("on");
-      }
       let san = document.querySelector(".san");
       let btn = document.querySelector(".sanH");
       let menu = document.querySelector(".menu");
