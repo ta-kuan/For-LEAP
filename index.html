@@ -30,6 +30,17 @@
       }
       .ment.on {
         display: block;
+        background-color: rgb(230,230,230);
+        border: none;
+        width: 100vw;
+        height: 100vh;
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: 10;
+        padding: 50vh 0;
+        font-weight: bold;
+        font-style: italic;
       }
       .question {
         font-size: 24px;
@@ -2314,18 +2325,21 @@
         document.getElementById("next").style.display = "none";
         document.getElementById("submit").disabled = false;
       }
-      function Ment() {
+      function M() {
         if (M === 1) {
-          ment.classList.remove("on");
           M = 0;
         } else if (M === 0) {
-          ment.classList.add("on");
           M = 1;
         }
+        savedata();
       }
 
 
-      Ment();
+      if (M === 0) {
+        ment.classList.remove("on");
+      } else if (M === 1) {
+        ment.classList.add("on");
+      }
       rangeStartSelect.addEventListener("change", () => {
         const newStart = parseInt(rangeStartSelect.value, 10);
         const validatedStart = isNaN(newStart) ? 1 : newStart;
@@ -2487,6 +2501,7 @@
           document.getElementById("answer").value = "";
           userAnswer = "";
           rensuc = 0;
+          M = 0;
           checkcommand();
           savedata();
           setQuestion();
