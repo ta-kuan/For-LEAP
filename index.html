@@ -15,7 +15,7 @@
         display: none;
       }
       .ment {
-        display: none;/*メンテナンス時はここを変更*/
+        display: block;/*メンテナンス時はここを変更*/
         background-color: rgb(230,230,230);
         border: none;
         width: 100vw;
@@ -758,6 +758,7 @@
       <link rel="icon" src="tubicon.png">
     </head>
     <body>
+      <div class="ment" id="ment">メンテナンス中</div>
       <div class="all">
         <div class="question" id="question"></div>
         <div class="suuzi" id="questionNumber"></div>
@@ -978,7 +979,6 @@
         <img id="img12" class="slide" src="ac12.png" alt="">
         <img id="img13" class="slide" src="ac13.png" alt="">
       </div>
-      <div class="ment" id="ment">メンテナンス中</div>
     <script>
       let current;
       let currentIndex;
