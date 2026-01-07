@@ -2341,11 +2341,6 @@
       }
 
 
-      if (M === 0) {
-        ment.classList.remove("on");
-      } else if (M === 1) {
-        ment.classList.add("on");
-      }
       rangeStartSelect.addEventListener("change", () => {
         const newStart = parseInt(rangeStartSelect.value, 10);
         const validatedStart = isNaN(newStart) ? 1 : newStart;
@@ -2601,6 +2596,11 @@
         }
         setQuestion();
       });
+      if (M === 0) {
+        ment.classList.remove("on");
+      } else if (M === 1) {
+        ment.classList.add("on");
+      }
       let san = document.querySelector(".san");
       let btn = document.querySelector(".sanH");
       let menu = document.querySelector(".menu");
