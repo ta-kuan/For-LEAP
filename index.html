@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html><!--　　allow()　　これをコンソールに入力して実行するとメンテンナンス画面がずっとでなくなるよ。もう一回実行すると戻るよ。初期化ボタンでも戻るよ。-->
 <html>
   <head>
     <style>
@@ -15,7 +15,7 @@
         display: none;
       }
       .ment {
-        display: block;
+        display: none;/*メンテナンス時はここを変更*/
         background-color: rgb(230,230,230);
         border: none;
         width: 100vw;
@@ -2333,6 +2333,11 @@
           M = 1;
         }
         savedata();
+        if (M === 0) {
+          ment.classList.remove("on");
+        } else if (M === 1) {
+          ment.classList.add("on");
+        }
       }
 
 
@@ -2481,6 +2486,7 @@
             command = 0;
             rensuc = 0;
             sentaku = 0;
+            M = 0;
             checkcommand();
             setQuestion();
           }
@@ -2502,7 +2508,6 @@
           document.getElementById("answer").value = "";
           userAnswer = "";
           rensuc = 0;
-          M = 0;
           checkcommand();
           savedata();
           setQuestion();
