@@ -2341,7 +2341,7 @@
 
 
 
-      M = localStorage.getItem("M");
+      M = Number(localStorage.getItem("M")) || 0;
       if (M === 0) {
         ment.classList.remove("on");
       } else if (M === 1) {
