@@ -2763,6 +2763,10 @@
           if (sentaku === 0) {
             sentaku = 1;
             qsentaku.classList.add("true")
+            acsentaku.classList.add("true");
+            setTimeout(() => {
+                acsentaku.classList.remove("true");
+            }, 5000);
             checkachieve();
           }
           const selectedValue = parseInt(numbers.value, 10);
