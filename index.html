@@ -2328,8 +2328,10 @@
       function allow() {
         if (M === 1) {
           M = 0;
+          console.log("OFF")
         } else if (M === 0) {
           M = 1;
+          cosole.log("ON")
         }
         localStorage.setItem("M", M);
         if (M === 0) {
