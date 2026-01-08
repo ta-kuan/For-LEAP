@@ -743,7 +743,7 @@
         display: none;
       }
       .qcom {
-        background-color: rgb(50,50,50);
+        background-color: rgb(55,55,55);
       }
       .acom {
         width: 96px;
@@ -2249,6 +2249,10 @@
           qzenmaru.classList.add("true");
           qsentaku.classList.add("true");
           qcom.classList.add("true");
+          accom.classList.add("true");
+            setTimeout(() => {
+              accom.classList.remove("true");
+            }, 5000);
         }
         if (command === 0) {
           document.body.style.color = "black";
