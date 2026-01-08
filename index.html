@@ -12,7 +12,7 @@ g<!DOCTYPE html><!--　　allow()　　これをコンソールに入力して�
         top: 50px;
       }
       .ment {
-        display: none;/*メンテナンス時はここを変更*/
+        display: block;/*メンテナンス時はここを変更*/
         background-color: rgb(230,230,230);
         border: none;
         width: 100vw;
@@ -2176,21 +2176,45 @@ g<!DOCTYPE html><!--　　allow()　　これをコンソールに入力して�
         if (userAnswer === "zenmaru" || userAnswer === "zennmaru") {
           zenmaru = 1;
           qzenmaru.classList.add("true");
+          aczenmaru.classList.add("true");
+            setTimeout(() => {
+                aczenmaru.classList.remove("true");
+            }, 5000);
         } else if (userAnswer === "kuro") {
           command = 0;
           qkuro.classList.add("true");
+          ackuro.classList.add("true");
+            setTimeout(() => {
+                ackuro.classList.remove("true");
+            }, 5000);
         } else if (userAnswer === "aka") {
           command = 1;
           qaka.classList.add("true");
+          acaka.classList.add("true");
+            setTimeout(() => {
+                acaka.classList.remove("true");
+            }, 5000);
         } else if (userAnswer === "ao") {
           command = 2;
           qao.classList.add("true");
+          acao.classList.add("true");
+            setTimeout(() => {
+                acao.classList.remove("true");
+            }, 5000);
         } else if (userAnswer === "midori") {
           command = 3;
           qmidori.classList.add("true");
+          acmidori.classList.add("true");
+            setTimeout(() => {
+                acmidori.classList.remove("true");
+            }, 5000);
         } else if (userAnswer === "mintyou" || userAnswer === "minntyou") {
           font = 1;
           qmintyou.classList.add("true");
+          acmintyou.classList.add("true");
+            setTimeout(() => {
+                acmintyou.classList.remove("true");
+            }, 5000);
         } else if (userAnswer === "hamanan" || userAnswer === "hamanann") {
           window.location.href = 'https://www.edu.pref.shizuoka.jp/hamamatsuminami-h/';
         } else if (userAnswer === "wwssadadba") {
