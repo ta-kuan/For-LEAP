@@ -2,7 +2,6 @@
 <html>
   <head>
     <style>
-      html,
       body {
         text-align: center;
         margin-top: 50px;
@@ -783,9 +782,9 @@
       .accom {
         position: absolute;
         right: -297px;
+        opacity: 0;
         bottom: 0;
-        transition-duration: 0.5s;
-        transition-property: right;
+        transition: right 0.5s, opacity 0.2s;
       }
       .ac11.true,
       .ac12.true,
@@ -819,6 +818,7 @@
       .acsentaku.true,
       .accom.true {
         right: 0;
+        opacity: 1;
       }
       </style>
       <meta charset="UTF-8">
