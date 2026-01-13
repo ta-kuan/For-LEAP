@@ -2175,7 +2175,11 @@
 
       function checkcommand() {
         if (userAnswer === "zenmaru" || userAnswer === "zennmaru") {
-          zenmaru = 1;
+          if (zenmaru === 0) {
+            zenmaru = 1;
+          } else if {
+            zenmaru = 0;
+          }
           qzenmaru.classList.add("true");
           aczenmaru.classList.add("true");
             setTimeout(() => {
@@ -2447,7 +2451,7 @@
             setTimeout(() => {
                 ac212.classList.remove("true");
             }, 5000);
-          } else if (rangeStart === 924 && rangeEnd === 965) {
+          } else if (rangeStart === 924 && rangeEnd === 966) {
             q213.classList.add("true");
             ac213.classList.add("true");
             setTimeout(() => {
@@ -2542,7 +2546,6 @@
           result.style.color = "green";
           count += 1;
           suc += 1;
-          rensuc += 1;
           const idx = mistakes.indexOf(questionNum);
           if (idx !== -1) {
             mistakes.splice(idx, 1);
