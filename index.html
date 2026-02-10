@@ -2691,7 +2691,8 @@
             rangeEndSelect.value = 923;
             rangeStart = 401;
             rangeEnd = 923;
-            document.getElementById("week").value = "冬課題テスト";
+            week: weeks.value,
+            document.getElementById("week").value = "ALL";
             const numbersSelect = document.getElementById("numbers");
             numbersSelect.value = 1;
             zenmaru = 0;
@@ -2816,6 +2817,9 @@
           count = saved.count || 0;
           rate = saved.rate || 0;
           rensuc = saved.rensuc || 0;
+          if (saved.week) {
+            weeks.value = saved.week;
+          }
           document.getElementById("rate").textContent = `正答率:${rate}% (${suc}/${count})`;
           rangeStartSelect.value = rangeStart;
           rangeEndSelect.value = rangeEnd;
