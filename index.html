@@ -1005,6 +1005,7 @@
         <div class="cmenu" id="cmenu"></div>
         <select class="week" id="week">
           <option>冬課題テスト</option>
+          <option>学年末テスト</option>
           <option>ALL</option>
           <option>P1:Week1</option>
           <option>P1:Week2</option>
@@ -2979,6 +2980,9 @@
         } else if (weeks.value === "冬課題テスト") {
           document.getElementById("start").value = 401;
           document.getElementById("end").value = 923;
+        } else if (weeks.value === "学年末テスト") {
+          document.getElementById("start").value = 843;
+          document.getElementById("end").value = 1000;
         }
         rangeStart = parseInt(document.getElementById("start").value, 10);
         rangeEnd = parseInt(document.getElementById("end").value, 10);
